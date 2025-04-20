@@ -1,11 +1,11 @@
 {
-    "name": "agriplant",
-    "short_name": "agriplant",
+    "name": "AgriPlant",
+    "short_name": "AgriPlant",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "A comprehensive farming application.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

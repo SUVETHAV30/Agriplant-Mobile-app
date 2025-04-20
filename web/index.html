@@ -1,38 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="$FLUTTER_BASE_HREF">
+  <base href="/">
 
   <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AgriPlant – A smart farming assistant app.">
+  <meta name="theme-color" content="#4CAF50">
 
-  <!-- iOS meta tags & icons -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="agriplant">
+  <!-- Social Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AgriPlant">
+  <meta property="og:description" content="A comprehensive farming application for modern agriculture.">
+  <meta property="og:image" content="icons/Icon-512.png">
+  <meta property="og:url" content="https://yourdomain.com">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AgriPlant">
+  <meta name="twitter:description" content="A comprehensive farming application for modern agriculture.">
+  <meta name="twitter:image" content="icons/Icon-512.png">
+
+  <!-- iOS support -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="AgriPlant">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
-
-  <title>agriplant</title>
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="manifest" href="manifest.json">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <title>AgriPlant</title>
+
+  <script>
+    const serviceWorkerVersion = null;
+  </script>
+  <script src="flutter.js" defer></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e8f5e9, #ffffff);
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('data:image/svg+xml,%3Csvg width="100%" height="100%" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg"%3E%3Ccircle cx="300" cy="300" r="250" fill="%23C8E6C9" opacity="0.3"/%3E%3Ccircle cx="900" cy="900" r="300" fill="%23A5D6A7" opacity="0.2"/%3E%3C/svg%3E');
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 0;
+    }
+
+    #loader {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #2e7d32;
+      font-size: 1.6rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 0 20px;
+    }
+  </style>
 </head>
 <body>
-  <script src="flutter_bootstrap.js" async></script>
+  <div id="loader">🌿 Loading AgriPlant, your smart farming companion...</div>
+
+  <script>
+    window.addEventListener('load', function(ev) {
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine().then(function(appRunner) {
+            document.getElementById("loader").remove();
+            appRunner.runApp();
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
